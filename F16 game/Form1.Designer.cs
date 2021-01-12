@@ -1,7 +1,7 @@
 ﻿
 namespace F16_game
 {
-    partial class F16
+    partial class Form1
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -30,7 +30,7 @@ namespace F16_game
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F16));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pillar1 = new System.Windows.Forms.PictureBox();
             this.pillar2 = new System.Windows.Forms.PictureBox();
             this.Player1 = new System.Windows.Forms.PictureBox();
@@ -99,7 +99,7 @@ namespace F16_game
             this.txtScore.TabIndex = 4;
             this.txtScore.Text = "Score: 0";
             // 
-            // F16
+            // F16_game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,8 +110,9 @@ namespace F16_game
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.pillar2);
             this.Controls.Add(this.pillar1);
-            this.Name = "F16";
+            this.Name = "F16_game";
             this.Text = "F16 Shooter Game";
+            this.Load += new System.EventHandler(this.F16_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.pillar1)).EndInit();

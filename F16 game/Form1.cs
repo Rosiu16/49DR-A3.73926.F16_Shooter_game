@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace F16_game
 {
-    public partial class F16 : Form
+    public partial class Form1: Form
     {
         bool goUp, goDown, shot, gameOver;
 
@@ -23,7 +23,7 @@ namespace F16_game
         int playerSpeed = 7;
         int index = 0; 
         
-        public F16()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -122,6 +122,12 @@ namespace F16_game
             txtScore.Text = "Score  :" + score + " Game over, press enter to retry!";
             gameOver = true; 
         }
+
+        private void F16_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void RemoveBullet(PictureBox bullet)
         {
             this.Controls.Remove(bullet);
@@ -170,7 +176,7 @@ namespace F16_game
 
             ufo.Left = 1000;
 
-            ufo.Top = rand.Next(20, this.ClientSize.Height = ufo.Height);
+            ufo.Top = rand.Next(20, this.ClientSize.Height - ufo.Height);
         }
     }
 

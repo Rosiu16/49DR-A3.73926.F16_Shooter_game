@@ -16,7 +16,7 @@ namespace F16_game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F16());
+            Application.Run(new Form1());
         }
     }
 }
