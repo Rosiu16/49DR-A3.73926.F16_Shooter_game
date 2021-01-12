@@ -46,6 +46,31 @@ namespace F16_game
             {
                 ChangeUFO();    
             }
+
+            foreach (Control x in this.Controls)
+            {
+                if ( x is PictureBox && (string)x.Tag == "pillar" )
+                {
+                    x.Left -= speed;
+
+                    if (x.Left < -200)
+                    {
+                        x.Left = 1000;
+                    }
+                }
+
+                if (x is PictureBox && (string)x.Tag == "bullet")
+                {
+                    x.Left += 25;
+
+                    if (x.Left > 800)
+                    {
+                        RemoveBullet(((PictureBox)x));
+                    }
+                }
+             }   
+
+
         }   
         
 

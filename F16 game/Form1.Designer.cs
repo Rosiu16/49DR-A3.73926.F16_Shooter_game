@@ -52,6 +52,7 @@ namespace F16_game
             this.pillar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pillar1.TabIndex = 0;
             this.pillar1.TabStop = false;
+            this.pillar1.Tag = "pillar";
             // 
             // pillar2
             // 
@@ -62,6 +63,7 @@ namespace F16_game
             this.pillar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pillar2.TabIndex = 1;
             this.pillar2.TabStop = false;
+            this.pillar2.Tag = "pillar";
             // 
             // Player1
             // 
@@ -99,7 +101,7 @@ namespace F16_game
             this.txtScore.TabIndex = 4;
             this.txtScore.Text = "Score: 0";
             // 
-            // F16_game
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,7 +112,7 @@ namespace F16_game
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.pillar2);
             this.Controls.Add(this.pillar1);
-            this.Name = "F16_game";
+            this.Name = "Form1";
             this.Text = "F16 Shooter Game";
             this.Load += new System.EventHandler(this.F16_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
