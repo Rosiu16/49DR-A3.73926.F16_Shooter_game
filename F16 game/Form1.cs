@@ -30,8 +30,24 @@ namespace F16_game
 
         private void MainTimerEvent(object sender, EventArgs e)
         {
+            txtScore.Text = "Score:  " + score;
 
-        }
+            if (goUp == true && Player1.Top >0)
+            {
+                Player1.Top -= playerSpeed;
+            }
+            if (goDown == true && Player1.Top + Player1.Height < this.ClientSize.Height)
+            {
+                Player1.Top += playerSpeed;
+            }
+            ufo.Left -= UFOspeed;
+
+            if (ufo.Left + ufo.Width < 0)
+            {
+                ChangeUFO();    
+            }
+        }   
+        
 
         private void KeyIsDown(object sender, KeyEventArgs e)
 
@@ -79,7 +95,7 @@ namespace F16_game
                 
         private void RestartGame() 
         {
-            goUP = false;
+            goUp = false;
             goDown = false;
             shot = false;
             gameOver = false;
@@ -91,26 +107,70 @@ namespace F16_game
 
             ChangeUFO();
 
+            Player1.Top = 60;
+
+            pillar1.Left = 600;
+            pillar2.Left = 273;
+
+            GameTimer.Start();
 
         }
 
         private void GameOver()
-        { 
-        
+        {
+            GameTimer.Stop();
+            txtScore.Text = "Score  :" + score + " Game over, press enter to retry!";
+            gameOver = true; 
         }
         private void RemoveBullet(PictureBox bullet)
-        { 
+        {
+            this.Controls.Remove(bullet);
+            bullet.Dispose();
         
         }
         private void MakeBullet()
-        { 
+        {
+            PictureBox bullet = new PictureBox();
+            bullet.BackColor = Color.Maroon;
+            bullet.Height = 5;
+            bullet.Width = 10;
+
+            bullet.Left = Player1.Left + Player1.Width;
+            bullet.Top = Player1.Top + Player1.Height / 2;
+
+            bullet.Tag = "bullet";
+
+            this.Controls.Add(bullet);
         
         }
 
         private void ChangeUFO()
         {
 
+            if (index > 3)
+            {
+                index = 1;
+            }
+            else
+            {
+                index += 1;
+            }
+            switch (index)
+            {
+                case 1:
+                    ufo.Image = Properties.Resources.alien1;
+                    break;
+                case 2:
+                    ufo.Image = Properties.Resources.alien2;
+                    break;
+                case 3:
+                    ufo.Image = Properties.Resources.alien3;
+                    break; 
+            }
 
+            ufo.Left = 1000;
+
+            ufo.Top = rand.Next(20, this.ClientSize.Height = ufo.Height);
         }
     }
 

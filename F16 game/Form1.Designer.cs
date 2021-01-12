@@ -35,8 +35,8 @@ namespace F16_game
             this.pillar2 = new System.Windows.Forms.PictureBox();
             this.Player1 = new System.Windows.Forms.PictureBox();
             this.ufo = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Form1 = new System.Windows.Forms.Label();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            this.txtScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pillar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pillar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
@@ -66,7 +66,7 @@ namespace F16_game
             // Player1
             // 
             this.Player1.Image = ((System.Drawing.Image)(resources.GetObject("Player1.Image")));
-            this.Player1.Location = new System.Drawing.Point(62, 136);
+            this.Player1.Location = new System.Drawing.Point(60, 133);
             this.Player1.Name = "Player1";
             this.Player1.Size = new System.Drawing.Size(119, 100);
             this.Player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,28 +76,28 @@ namespace F16_game
             // ufo
             // 
             this.ufo.Image = ((System.Drawing.Image)(resources.GetObject("ufo.Image")));
-            this.ufo.Location = new System.Drawing.Point(766, 219);
+            this.ufo.Location = new System.Drawing.Point(768, 230);
             this.ufo.Name = "ufo";
             this.ufo.Size = new System.Drawing.Size(68, 72);
             this.ufo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.ufo.TabIndex = 3;
             this.ufo.TabStop = false;
             // 
-            // timer1
+            // GameTimer
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 20;
-            this.timer1.Tick += new System.EventHandler(this.MainTimerEvent);
+            this.GameTimer.Enabled = true;
+            this.GameTimer.Interval = 20;
+            this.GameTimer.Tick += new System.EventHandler(this.MainTimerEvent);
             // 
-            // Form1
+            // txtScore
             // 
-            this.Form1.AutoSize = true;
-            this.Form1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Form1.Location = new System.Drawing.Point(1, 0);
-            this.Form1.Name = "Form1";
-            this.Form1.Size = new System.Drawing.Size(110, 29);
-            this.Form1.TabIndex = 4;
-            this.Form1.Text = "Score: 0";
+            this.txtScore.AutoSize = true;
+            this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtScore.Location = new System.Drawing.Point(1, 0);
+            this.txtScore.Name = "txtScore";
+            this.txtScore.Size = new System.Drawing.Size(110, 29);
+            this.txtScore.TabIndex = 4;
+            this.txtScore.Text = "Score: 0";
             // 
             // F16
             // 
@@ -105,7 +105,7 @@ namespace F16_game
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(923, 470);
-            this.Controls.Add(this.Form1);
+            this.Controls.Add(this.txtScore);
             this.Controls.Add(this.ufo);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.pillar2);
@@ -129,8 +129,8 @@ namespace F16_game
         private System.Windows.Forms.PictureBox pillar2;
         private System.Windows.Forms.PictureBox Player1;
         private System.Windows.Forms.PictureBox ufo;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label Form1;
+        private System.Windows.Forms.Timer GameTimer;
+        private System.Windows.Forms.Label txtScore;
     }
 }
 
