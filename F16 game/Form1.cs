@@ -82,10 +82,10 @@ namespace F16_game
             {
                 goDown = false;
             }
-            if (shot == false)
+            if (shot == true)
             {
 
-                shot = true;
+                shot = false;
             }
             if (e.KeyCode == Keys.Enter && gameOver == true)
             {
