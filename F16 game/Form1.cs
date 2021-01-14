@@ -63,9 +63,16 @@ namespace F16_game
                 {
                     x.Left += 25;
 
-                    if (x.Left > 800)
+                    if (x.Left > 900)
                     {
                         RemoveBullet(((PictureBox)x));
+                    }
+
+                    if (ufo.Bounds.IntersectsWith(x.Bounds)) 
+                    {
+                        RemoveBullet(((PictureBox)x));
+                        score += 1;
+                        ChangeUFO();
                     }
                 }
              }   
