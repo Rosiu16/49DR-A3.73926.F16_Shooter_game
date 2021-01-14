@@ -37,6 +37,7 @@ namespace F16_game
             this.ufo = new System.Windows.Forms.PictureBox();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.txtScore = new System.Windows.Forms.Label();
+            this.Game = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pillar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pillar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
@@ -68,9 +69,9 @@ namespace F16_game
             // Player1
             // 
             this.Player1.Image = ((System.Drawing.Image)(resources.GetObject("Player1.Image")));
-            this.Player1.Location = new System.Drawing.Point(60, 133);
+            this.Player1.Location = new System.Drawing.Point(60, 153);
             this.Player1.Name = "Player1";
-            this.Player1.Size = new System.Drawing.Size(119, 100);
+            this.Player1.Size = new System.Drawing.Size(86, 76);
             this.Player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Player1.TabIndex = 2;
             this.Player1.TabStop = false;
@@ -94,12 +95,22 @@ namespace F16_game
             // txtScore
             // 
             this.txtScore.AutoSize = true;
-            this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtScore.Location = new System.Drawing.Point(1, 0);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(110, 29);
+            this.txtScore.Size = new System.Drawing.Size(80, 20);
             this.txtScore.TabIndex = 4;
             this.txtScore.Text = "Score: 0";
+            // 
+            // Game
+            // 
+            this.Game.AutoSize = true;
+            this.Game.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Game.ForeColor = System.Drawing.Color.Red;
+            this.Game.Location = new System.Drawing.Point(135, 9);
+            this.Game.Name = "Game";
+            this.Game.Size = new System.Drawing.Size(0, 20);
+            this.Game.TabIndex = 5;
             // 
             // Form1
             // 
@@ -107,6 +118,7 @@ namespace F16_game
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(923, 470);
+            this.Controls.Add(this.Game);
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.ufo);
             this.Controls.Add(this.Player1);
@@ -134,6 +146,7 @@ namespace F16_game
         private System.Windows.Forms.PictureBox ufo;
         private System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.Label txtScore;
+        private System.Windows.Forms.Label Game;
     }
 }
 

@@ -57,13 +57,19 @@ namespace F16_game
                     {
                         x.Left = 1000;
                     }
+
+                    if (Player1.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        GameOver();
+
+                    }
                 }
 
                 if (x is PictureBox && (string)x.Tag == "bullet")
                 {
                     x.Left += 25;
 
-                    if (x.Left > 900)
+                    if (x.Left > 700)
                     {
                         RemoveBullet(((PictureBox)x));
                     }
@@ -75,9 +81,28 @@ namespace F16_game
                         ChangeUFO();
                     }
                 }
-             }   
+             }
 
+            if (Player1.Bounds.IntersectsWith(ufo.Bounds))
+            {
+                GameOver();
+            }
 
+            if (score > 10)
+            {
+                speed = 12;
+                UFOspeed = 18;
+            }
+            if (score > 20)
+            {
+                speed = 14;
+                UFOspeed = 20;
+            }
+            if (score > 30)
+            {
+                speed = 16;
+                UFOspeed = 22;
+            }
         }   
         
 
@@ -151,7 +176,7 @@ namespace F16_game
         private void GameOver()
         {
             GameTimer.Stop();
-            txtScore.Text = "Score  :" + score + " Game over, press enter to retry!";
+            txtScore.Text = "Score  :" + score +  "   Game over, press enter to retry!";
             gameOver = true; 
         }
 
@@ -159,6 +184,7 @@ namespace F16_game
         {
 
         }
+
 
         private void RemoveBullet(PictureBox bullet)
         {
